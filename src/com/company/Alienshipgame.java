@@ -8,10 +8,16 @@ import java.util.regex.*;
 public class Alienshipgame {
 
     private static int kill=0;
+    private static int guessCount=0;
     private static Alienship obj= new Alienship();
+    private static ArrayList<Integer> guessexists = new ArrayList<Integer>();
+
+
 
     public static void main(String[] args) {
 
+        guessexists.add(0);
+        //System.out.println(guessexists);
         gridBuilder();
         getuserGuess();
 
@@ -19,9 +25,20 @@ public class Alienshipgame {
 
     }
 
+    public static boolean guessExists(int guess){
+        boolean toReturn=false;
+        if (guessexists.contains(guess)){
+            toReturn= true;
+        } else {
+            guessexists.add(guess);
+        }
+        return toReturn;
+    }
+
     public static void getuserGuess() {
 
         Scanner scanner= new Scanner(System.in);
+
         while(kill<3) {
 
             System.out.println("Enter a guess: ");
@@ -29,18 +46,28 @@ public class Alienshipgame {
 
             boolean match= Pattern.matches("[a-hA-H]?[1-8]?", guess);
             if(match) {
+
                 String letter = guess.substring(0, guess.length() / 2);
                 String number = guess.substring(guess.length() / 2);
                 int letterToNumber = convertLetterToInt(letter);
                 int numberInt = Integer.parseInt(number);
-                int userGuessedCell=(letterToNumber*8)+numberInt;
-                boolean afterEval= obj.evaluateUserGuess(userGuessedCell);
-                if (afterEval) {
-                    kill++;
-                    System.out.println("You sank "+kill+" out of 3 Alienships! ");
+                int userGuessedCell = (letterToNumber * 8) + numberInt;
+                boolean alreadyGuessed = guessExists(userGuessedCell);
+                if(alreadyGuessed) {
+                    System.out.println("You guessed that already");
+                } else {
+                    guessCount++;
+                    boolean afterEval = obj.evaluateUserGuess(userGuessedCell);
+                    if (afterEval) {
+                        kill++;
+                        System.out.println("You sank " + kill + " out of 3 Alienships! ");
+                    }
                 }
-                //System.out.println(userGuessedCell);
+
+
             }
+
+
             else {
                 System.out.println("Invalid input");
             }
@@ -49,6 +76,7 @@ public class Alienshipgame {
 
         }
         System.out.println("Game over!!");
+        System.out.println("You took a total of "+guessCount+" guesses.");
 
     }
 

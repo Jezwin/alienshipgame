@@ -7,6 +7,8 @@ public class Alienship {
 
     private ArrayList<Integer> arraylist = new ArrayList<Integer>();
 
+
+
     public int checkArraylist(int ship) {
         int flag = 1;
         for (int i = 0; i < arraylist.size(); i++) {
@@ -25,6 +27,7 @@ public class Alienship {
     public void addToArraylist(int shipLocation) {
         arraylist.add(shipLocation);
     }
+
 
     public boolean evaluateUserGuess(int guess) {
         boolean toReturn =false;
