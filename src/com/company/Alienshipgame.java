@@ -8,11 +8,15 @@ import java.util.regex.*;
 public class Alienshipgame {
 
     private static int kill=0;
+    private static Alienship obj= new Alienship();
+
     public static void main(String[] args) {
 
-        //gridBuilder();
+        gridBuilder();
         getuserGuess();
-        Alienship obj= new Alienship();
+
+
+
     }
 
     public static void getuserGuess() {
@@ -29,8 +33,9 @@ public class Alienshipgame {
                 String number = guess.substring(guess.length() / 2);
                 int letterToNumber = convertLetterToInt(letter);
                 int numberInt = Integer.parseInt(number);
-                int locationCell=(letterToNumber*8)+numberInt;
-                System.out.println(locationCell);
+                int userGuessedCell=(letterToNumber*8)+numberInt;
+                obj.evaluateUserGuess(userGuessedCell);
+                //System.out.println(userGuessedCell);
             }
             else {
                 System.out.println("Invalid input");
@@ -88,12 +93,11 @@ public class Alienshipgame {
         
         int shipCount = 3;
 
-        ArrayList<Integer> arraylist = new ArrayList<Integer>();
 
         while (shipCount > 0) {
 
             int ship1 = shipBuilder(1, 64);
-            int flag = checkArraylist(arraylist, ship1);
+            int flag = obj.checkArraylist(ship1);
             int cornered =isCornered(ship1);
 
             if(flag==1 && cornered==1) {
@@ -101,30 +105,31 @@ public class Alienshipgame {
                 int direction= shipBuilder(0,1);
                 if(direction==0) {
 
-                    int isNext1= checkArraylist(arraylist, ship1+1);
-                    int isNext2= checkArraylist(arraylist, ship1-1);
+                    int isNext1= obj.checkArraylist(ship1+1);
+                    int isNext2= obj.checkArraylist(ship1-1);
                     if (isNext1==1 && isNext2==1) {
-                        arraylist.add(ship1-1);
-                        arraylist.add(ship1);
-                        arraylist.add(ship1+1);
 
+                        obj.addToArraylist(ship1-1);
+                        obj.addToArraylist(ship1);
+                        obj.addToArraylist(ship1+1);
                         shipCount--;
                     }
 
                 } else {
-                    int isNext1= checkArraylist(arraylist, ship1+8);
-                    int isNext2= checkArraylist(arraylist, ship1-8);
+                    int isNext1= obj.checkArraylist(ship1+8);
+                    int isNext2= obj.checkArraylist(ship1-8);
                     if (isNext1==1 && isNext2==1) {
-                        arraylist.add(ship1-8);
-                        arraylist.add(ship1);
-                        arraylist.add(ship1+8);
-
+                        obj.addToArraylist(ship1-8);
+                        obj.addToArraylist(ship1);
+                        obj.addToArraylist(ship1+8);
                         shipCount--;
                     }
                 }
             }
         }
 
+        ArrayList<Integer> arraylist = new ArrayList<Integer>();
+        arraylist=obj.getArraylist();
         for (int i=0; i<arraylist.size(); i++) {
             System.out.println(arraylist.get(i) + " ");
         }
@@ -144,16 +149,7 @@ public class Alienshipgame {
     }
 
 
-    public static int checkArraylist(ArrayList<Integer> arraylist, int ship) {
-        int flag=1;
-        for (int i = 0; i < arraylist.size(); i++) {
 
-            if (arraylist.get(i) == ship) {
-                flag = 0;
-            }
-        }
-        return flag;
-    }
 
 
 

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="acb114d2-7b6b-479c-a9ee-6b6b5e5edd27" name="Default Changelist" comment="" />
+    <list default="true" id="acb114d2-7b6b-479c-a9ee-6b6b5e5edd27" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Battleship/com/company/Alienship.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Battleship/com/company/Alienship.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Battleship/com/company/Alienshipgame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Battleship/com/company/Alienshipgame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Alienship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Alienship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Alienshipgame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Alienshipgame.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +22,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1QJdJP6PRQ0z0uWcLEZqjyKK0QK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunDashboard">
@@ -60,5 +72,16 @@
       <updated>1567492562275</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
