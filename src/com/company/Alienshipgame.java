@@ -22,7 +22,7 @@ public class Alienshipgame {
     public static void getuserGuess() {
 
         Scanner scanner= new Scanner(System.in);
-        while(kill!=3) {
+        while(kill<3) {
 
             System.out.println("Enter a guess: ");
             String guess = scanner.nextLine();
@@ -34,7 +34,11 @@ public class Alienshipgame {
                 int letterToNumber = convertLetterToInt(letter);
                 int numberInt = Integer.parseInt(number);
                 int userGuessedCell=(letterToNumber*8)+numberInt;
-                obj.evaluateUserGuess(userGuessedCell);
+                boolean afterEval= obj.evaluateUserGuess(userGuessedCell);
+                if (afterEval) {
+                    kill++;
+                    System.out.println("You sank "+kill+" out of 3 Alienships! ");
+                }
                 //System.out.println(userGuessedCell);
             }
             else {
@@ -44,6 +48,7 @@ public class Alienshipgame {
 
 
         }
+        System.out.println("Game over!!");
 
     }
 
