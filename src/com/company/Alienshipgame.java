@@ -17,7 +17,6 @@ public class Alienshipgame {
     public static void main(String[] args) {
 
         guessexists.add(0);
-        //System.out.println(guessexists);
         gridBuilder();
         getuserGuess();
 
@@ -35,6 +34,13 @@ public class Alienshipgame {
         return toReturn;
     }
 
+
+
+    public int gameTester( String letter){
+        return convertLetterToInt(letter);
+
+    }
+
     public static void getuserGuess() {
 
         Scanner scanner= new Scanner(System.in);
@@ -44,7 +50,7 @@ public class Alienshipgame {
             System.out.println("Enter a guess: ");
             String guess = scanner.nextLine();
 
-            boolean match= Pattern.matches("[a-hA-H]?[1-8]?", guess);
+            boolean match= Pattern.matches("[a-hA-H][1-8]", guess);
             if(match) {
 
                 String letter = guess.substring(0, guess.length() / 2);
@@ -129,32 +135,32 @@ public class Alienshipgame {
 
         while (shipCount > 0) {
 
-            int ship1 = shipBuilder(1, 64);
-            int flag = obj.checkArraylist(ship1);
-            int cornered =isCornered(ship1);
+            int shipLocation = shipBuilder(1, 64);
+            boolean flag = obj.checkArraylist(shipLocation);
+            int cornered =isCornered(shipLocation);
 
-            if(flag==1 && cornered==1) {
+            if(flag && cornered==1) {
 
                 int direction= shipBuilder(0,1);
                 if(direction==0) {
 
-                    int isNext1= obj.checkArraylist(ship1+1);
-                    int isNext2= obj.checkArraylist(ship1-1);
-                    if (isNext1==1 && isNext2==1) {
+                    boolean isNext1= obj.checkArraylist(shipLocation+1);
+                    boolean isNext2= obj.checkArraylist(shipLocation-1);
+                    if (isNext1 && isNext2) {
 
-                        obj.addToArraylist(ship1-1);
-                        obj.addToArraylist(ship1);
-                        obj.addToArraylist(ship1+1);
+                        obj.addToArraylist(shipLocation-1);
+                        obj.addToArraylist(shipLocation);
+                        obj.addToArraylist(shipLocation+1);
                         shipCount--;
                     }
 
                 } else {
-                    int isNext1= obj.checkArraylist(ship1+8);
-                    int isNext2= obj.checkArraylist(ship1-8);
-                    if (isNext1==1 && isNext2==1) {
-                        obj.addToArraylist(ship1-8);
-                        obj.addToArraylist(ship1);
-                        obj.addToArraylist(ship1+8);
+                    boolean isNext1= obj.checkArraylist(shipLocation+8);
+                    boolean isNext2= obj.checkArraylist(shipLocation-8);
+                    if (isNext1 && isNext2) {
+                        obj.addToArraylist(shipLocation-8);
+                        obj.addToArraylist(shipLocation);
+                        obj.addToArraylist(shipLocation+8);
                         shipCount--;
                     }
                 }

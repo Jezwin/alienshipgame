@@ -8,14 +8,11 @@ public class Alienship {
     private ArrayList<Integer> arraylist = new ArrayList<Integer>();
 
 
+    public boolean checkArraylist(int ship) {
+        boolean flag = true;
+        if(arraylist.contains(ship)) {
+            flag=false;
 
-    public int checkArraylist(int ship) {
-        int flag = 1;
-        for (int i = 0; i < arraylist.size(); i++) {
-
-            if (arraylist.get(i) == ship) {
-                flag = 0;
-            }
         }
         return flag;
     }

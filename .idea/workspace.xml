@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="acb114d2-7b6b-479c-a9ee-6b6b5e5edd27" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/company/Alienshipgametester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Battleship/com/company/Alienship.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Battleship/com/company/Alienship.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Battleship/com/company/Alienshipgame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Battleship/com/company/Alienshipgame.class" afterDir="false" />
@@ -29,6 +30,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -42,7 +44,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Alienshipgametester">
+    <configuration name="Alienshipgametester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Alienshipgametester" />
+      <module name="Battleship" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Alienshipgame" />
       <module name="Battleship" />
@@ -55,6 +70,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Alienshipgametester" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -77,7 +93,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
