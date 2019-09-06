@@ -12,7 +12,6 @@ public class Alienshipgametester {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        int locationCount = 0;
         int[] alienShip = new int[9];
 
         for (int i = 0; i < alienShip.length; i++) {
@@ -21,10 +20,11 @@ public class Alienshipgametester {
         }
         scanner.nextLine();
 
+
         while (true) {
             System.out.println("Enter guess, 'c' to exit");
             String guess = scanner.nextLine();
-            if(guess.equals("c")) {
+            if (guess.equals("c")) {
                 break;
             }
 
@@ -32,7 +32,7 @@ public class Alienshipgametester {
             if (match) {
                 String letter = guess.substring(0, guess.length() / 2);
                 String number = guess.substring(guess.length() / 2);
-                int letterToNumber = testObjectGame.gameTester(letter.toUpperCase());
+                int letterToNumber = testObjectGame.returnConvertLetterToInt(letter.toUpperCase());
 
                 int numberInt = Integer.parseInt(number);
                 int userGuessedCell = (letterToNumber * 8) + numberInt;
@@ -48,9 +48,10 @@ public class Alienshipgametester {
         }
     }
 
+
     private static void guessTester(int userGuess, String expectedResult, int[] alienShip) {
-        for (int i = 0; i < alienShip.length; i++) {
-            testObject.addToArraylist(alienShip[i]);
+        for (int value : alienShip) {
+            testObject.addToArrayList(value);
         }
         System.out.println("What it gets:");
         testObject.evaluateUserGuess(userGuess);

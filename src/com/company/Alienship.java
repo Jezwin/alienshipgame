@@ -3,12 +3,12 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Alienship {
+class Alienship {
 
-    private ArrayList<Integer> arraylist = new ArrayList<Integer>();
+    private ArrayList<Integer> arraylist = new ArrayList<>();
 
 
-    public boolean notInArraylist(int ship) {
+    boolean notInArrayList(int ship) {
         boolean flag = true;
         if (arraylist.contains(ship)) {
             flag = false;
@@ -16,19 +16,19 @@ public class Alienship {
         return flag;
     }
 
-    public void getArraylist() {
-        for (int i = 0; i < arraylist.size(); i++) {
-            System.out.println(arraylist.get(i) + " ");
+    void printArrayList() {
+        for (Integer integer : arraylist) {
+            System.out.println(integer + " ");
         }
     }
 
-    public void addToArraylist(int shipLocation) {
+    void addToArrayList(int shipLocation) {
 
         arraylist.add(shipLocation);
     }
 
 
-    public boolean evaluateUserGuess(int guess) {
+    boolean evaluateUserGuess(int guess) {
         boolean toReturn = false;
         List<Integer> ship1 = arraylist.subList(0, 3);
         List<Integer> ship2 = arraylist.subList(3, 6);
@@ -39,8 +39,8 @@ public class Alienship {
                 int position = ship1.indexOf(guess);
                 ship1.set(position, 0);
                 int flag = 1;
-                for (int i = 0; i < ship1.size(); i++) {
-                    if (ship1.get(i) != 0) {
+                for (Integer integer : ship1) {
+                    if (integer != 0) {
                         flag = 1;
                     } else {
                         flag = 0;
@@ -53,8 +53,8 @@ public class Alienship {
                 int position = ship2.indexOf(guess);
                 ship2.set(position, 0);
                 int flag = 1;
-                for (int i = 0; i < ship2.size(); i++) {
-                    if (ship2.get(i) != 0) {
+                for (Integer integer : ship2) {
+                    if (integer != 0) {
                         flag = 1;
                     } else {
                         flag = 0;
@@ -68,8 +68,8 @@ public class Alienship {
                 int position = ship3.indexOf(guess);
                 ship3.set(position, 0);
                 int flag = 1;
-                for (int i = 0; i < ship3.size(); i++) {
-                    if (ship3.get(i) != 0) {
+                for (Integer integer : ship3) {
+                    if (integer != 0) {
                         flag = 1;
                     } else {
                         flag = 0;

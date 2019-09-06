@@ -10,7 +10,7 @@ public class Alienshipgame {
     private static int kill = 0;
     private static int guessCount = 0;
     private static Alienship obj = new Alienship();
-    private static ArrayList<Integer> guessList = new ArrayList<Integer>();
+    private static ArrayList<Integer> guessList = new ArrayList<>();
 
 
     public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class Alienshipgame {
 
     }
 
-    public static boolean guessExists(int guess) {
+    private static boolean guessExists(int guess) {
         boolean toReturn = false;
         if (guessList.contains(guess)) {
             toReturn = true;
@@ -32,12 +32,13 @@ public class Alienshipgame {
     }
 
 
-    public int gameTester(String letter) {
+    int returnConvertLetterToInt(String letter) {
         return convertLetterToInt(letter);
 
     }
 
-    public static void getUserGuess() {
+
+    private static void getUserGuess() {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -73,62 +74,60 @@ public class Alienshipgame {
         System.out.println("You took a total of " + guessCount + " guesses.");
     }
 
-    public static int convertLetterToInt(String letter) {
+    private static int convertLetterToInt(String letter) {
         char character = letter.charAt(0);
-        int converted = character - 'A';
-        return converted;
+        return character - 'A';
     }
 
-    public static void gridBuilder() {
+    private static void gridBuilder() {
 
         int shipCount = 3;
         while (shipCount > 0) {
 
             int shipLocation = random(1, 64);
-            // System.out.println(shipLocation);
-            boolean flag = obj.notInArraylist(shipLocation);
+            boolean flag = obj.notInArrayList(shipLocation);
             boolean cornered = isCornered(shipLocation);
 
-            if (flag == true && cornered == false) {
+            if (flag && !cornered) {
 
 
                 int direction = random(0, 1);
                 if (direction == 0) {
 
 
-                    boolean isNext1 = obj.notInArraylist(shipLocation + 1);
-                    boolean isNext2 = obj.notInArraylist(shipLocation - 1);
+                    boolean isNext1 = obj.notInArrayList(shipLocation + 1);
+                    boolean isNext2 = obj.notInArrayList(shipLocation - 1);
                     if (isNext1 && isNext2) {
 
 
-                        obj.addToArraylist(shipLocation - 1);
-                        obj.addToArraylist(shipLocation);
-                        obj.addToArraylist(shipLocation + 1);
+                        obj.addToArrayList(shipLocation - 1);
+                        obj.addToArrayList(shipLocation);
+                        obj.addToArrayList(shipLocation + 1);
                         shipCount--;
                     }
 
                 } else {
-                    boolean isNext1 = obj.notInArraylist(shipLocation + 8);
-                    boolean isNext2 = obj.notInArraylist(shipLocation - 8);
+                    boolean isNext1 = obj.notInArrayList(shipLocation + 8);
+                    boolean isNext2 = obj.notInArrayList(shipLocation - 8);
                     if (isNext1 && isNext2) {
-                        obj.addToArraylist(shipLocation - 8);
-                        obj.addToArraylist(shipLocation);
-                        obj.addToArraylist(shipLocation + 8);
+                        obj.addToArrayList(shipLocation - 8);
+                        obj.addToArrayList(shipLocation);
+                        obj.addToArrayList(shipLocation + 8);
                         shipCount--;
                     }
                 }
             }
         }
 
-        obj.getArraylist();
+        obj.printArrayList();
     }
 
 
-    public static boolean isCornered(int ship) {
+    private static boolean isCornered(int ship) {
         boolean cornered = false;
         int[] cornerNumbers = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 57, 58, 59, 60, 61, 62, 63, 64, 9, 17, 25, 33, 41, 49, 16, 24, 32, 40, 48, 56};
-        for (int i = 0; i < cornerNumbers.length; i++) {
-            if (cornerNumbers[i] == ship) {
+        for (int cornerNumber : cornerNumbers) {
+            if (cornerNumber == ship) {
                 cornered = true;
                 break;
             }
@@ -137,10 +136,9 @@ public class Alienshipgame {
     }
 
 
-    public static int random(int min, int max) {
+    private static int random(int min, int max) {
 
         int range = max - min + 1;
-        int rand = (int) (Math.random() * range) + min;
-        return (rand);
+        return ((int) (Math.random() * range) + min);
     }
 }
