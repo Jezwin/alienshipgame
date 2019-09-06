@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="acb114d2-7b6b-479c-a9ee-6b6b5e5edd27" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/Alienshipgametester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Battleship/com/company/Alienship.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Battleship/com/company/Alienship.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Battleship/com/company/Alienshipgame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Battleship/com/company/Alienshipgame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Battleship/com/company/Alienshipgametester.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Battleship/com/company/Alienshipgametester.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Alienship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Alienship.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Alienshipgame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Alienshipgame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Alienshipgametester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Alienshipgametester.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +45,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Alienshipgametester">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Alienshipgametester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Alienshipgametester" />
       <module name="Battleship" />
@@ -70,8 +71,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Alienshipgametester" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Alienshipgametester" />
       </list>
     </recent_temporary>
   </component>
